@@ -1,3 +1,4 @@
+// buildGrid();
 for (let i = 1; i < 17; i++) {
   let element = document.createElement('div');
   element.className = 'gridComp';
@@ -5,8 +6,18 @@ for (let i = 1; i < 17; i++) {
   element.innerText = i;
 }
 
-var allDivs = document.querySelectorAll('.gridComp');
+let allDivs = document.getElementsByClassName('gridComp');
+
+for (let i = 0; i < allDivs.length; i++) {
+  allDivs[i].addEventListener(
+    'mouseover',
+    () => {
+      changeColour(allDivs[i]);
+    },
+    false
+  );
+}
 
 function changeColour(a) {
-  a.backgroundColor;
+  a.setAttribute('style', 'background-color:black');
 }
